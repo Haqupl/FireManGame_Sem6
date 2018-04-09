@@ -44,7 +44,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1100685249749282}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 15, y: 0, z: 120}
+  m_LocalPosition: {x: 19.858728, y: 1.49, z: -190.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -59,6 +59,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -75,6 +76,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -113,7 +115,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 10, y: 60.00003, z: 0.15}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 0.1}
 --- !u!65 &65348960280831574
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -136,8 +138,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.67, y: 60, z: 0.12}
-  m_Center: {x: 8.67, y: 0, z: 0.15000004}
+  m_Size: {x: 4.65, y: 60, z: 0.12}
+  m_Center: {x: 7.65, y: 0, z: 0.15000004}
 --- !u!65 &65747928165196460
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -160,8 +162,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.67, y: 60, z: 0.12}
-  m_Center: {x: -8.67, y: 0, z: 0.15000004}
+  m_Size: {x: 4.65, y: 60, z: 0.12}
+  m_Center: {x: -7.65, y: 0, z: 0.15000004}
 --- !u!65 &65910888856727962
 BoxCollider:
   m_ObjectHideFlags: 1
