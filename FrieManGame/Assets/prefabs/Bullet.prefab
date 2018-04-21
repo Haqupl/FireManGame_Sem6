@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  splash: {fileID: 198048788993891056, guid: e19d582bf6b82cf40bf872b207f164b9, type: 2}
 --- !u!135 &135306168936828744
 SphereCollider:
   m_ObjectHideFlags: 1

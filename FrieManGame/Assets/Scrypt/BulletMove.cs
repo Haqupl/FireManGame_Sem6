@@ -6,6 +6,7 @@ public class BulletMove : MonoBehaviour
 {
 
     public float speed = 5;
+    public ParticleSystem splash;
 
     // Use this for initialization
     void Start()
@@ -18,6 +19,12 @@ public class BulletMove : MonoBehaviour
         //Debug.Log(other.tag);
         if (other.tag != "Player")
         {
+            if (other.tag == "EnemyTag")
+            {
+                other.GetComponent<EnemyHealth>().AddDamege();
+            }
+
+            Instantiate(splash, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }
