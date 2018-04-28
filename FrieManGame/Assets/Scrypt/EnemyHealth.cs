@@ -7,7 +7,7 @@ public class EnemyHealth : MonoBehaviour
 
     public float health = 3, timeBetween = 1;
     public int damage = 1;
-
+    public byte score = 5;
     private float lastAttack = 0;
 
     // Use this for initialization
@@ -22,6 +22,7 @@ public class EnemyHealth : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            GameObject.FindObjectOfType<GameManagment>().AddScore(score);
         }
     }
 
