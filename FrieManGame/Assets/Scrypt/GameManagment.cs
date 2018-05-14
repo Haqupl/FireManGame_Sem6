@@ -17,24 +17,19 @@ public class GameManagment : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-      
+
         GameObject[] objPlayers = GameObject.FindGameObjectsWithTag("Player");
-        //Debug.Log(objPlayers.Length);
         for (int i = 0; i < objPlayers.Length; i++)
         {
             if (objPlayers[i].name == "Player")
             {
                 player = objPlayers[i];
-                //Debug.Log("Znalazle");
                 break;
             }
         }
 
         StartCoroutine(SpawnEnemy());
-        //if (player != null)
-        //    pHealth = player.GetComponent<PlayerHealth>();
-
-    }
+         }
 
     IEnumerator SpawnEnemy()
     {
@@ -56,7 +51,7 @@ public class GameManagment : MonoBehaviour
 
     }
 
-   public void AddScore(int score)
+    public void AddScore(int score)
     {
         this.score += score;
         txtScore.text = "Punkty: " + this.score;

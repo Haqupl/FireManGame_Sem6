@@ -18,15 +18,16 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        sliderHealth.value = Mathf.Lerp(sliderHealth.value, health, Time.deltaTime * 3f);
         if (health <= 0)
         {
-            Destroy(gameObject);
+            sliderHealth.value = 0;
+            Destroy(gameObject);           
         }
     }
 
     public void AddDamage(int damage)
     {
-        health -= damage; //healt = healt - damage
-        sliderHealth.value = health;
+        health -= damage; //healt = healt - damage       
     }
 }
