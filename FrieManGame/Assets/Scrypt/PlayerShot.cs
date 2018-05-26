@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.EventSystems;
 public class PlayerShot : MonoBehaviour
 {
 
@@ -17,6 +17,8 @@ public class PlayerShot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
 
         bool inputShoot = Input.GetButton("Fire1");
         if (inputShoot && AmmoInMagazine > 0 && lastShoot <= Time.time)
