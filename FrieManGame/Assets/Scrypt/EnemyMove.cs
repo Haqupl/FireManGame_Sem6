@@ -27,13 +27,16 @@ public class EnemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!nma.isOnNavMesh)
+            return;
+
         if (target != null)
         {
             nma.SetDestination(target.position);
         }
         if (target == null)
         {
-            nma.Stop();
+            nma.isStopped = true;
         }
     }
 }
