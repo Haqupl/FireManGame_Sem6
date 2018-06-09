@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour
     public int damage = 1;
     public byte score = 5;
     public Slider sliderHealth;
+    public GameObject healtBonus;
 
     private float lastAttack = 0;
 
@@ -26,14 +27,19 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (sliderHealth!= null)
-        sliderHealth.value = Mathf.Lerp(sliderHealth.value, health, Time.deltaTime * 3f);
-        
+        if (sliderHealth != null)
+            sliderHealth.value = Mathf.Lerp(sliderHealth.value, health, Time.deltaTime * 3f);
+
         if (health <= 0)
         {
             if (sliderHealth != null)
                 sliderHealth.value = 0;
             FindObjectOfType<GameManagment>().AddScore(score);
+
+            if ((Random.value * 100) >= 50)
+            {
+                Instantiate(healtBonus, transform.position, Quaternion.identity);
+            }
             Destroy(gameObject);
         }
     }

@@ -30,4 +30,12 @@ public class PlayerHealth : MonoBehaviour
     {
         health -= damage; //healt = healt - damage       
     }
+
+    public void AddHealth(int value)
+    {
+        if (health<5)
+        {
+            health += value;
+        }      
+    }
 }

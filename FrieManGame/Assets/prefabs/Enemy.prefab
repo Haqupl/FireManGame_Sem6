@@ -187,6 +187,7 @@ MonoBehaviour:
   damage: 1
   score: 5
   sliderHealth: {fileID: 0}
+  healtBonus: {fileID: 1429384581649894, guid: 54bf907a7aa185b418a6ef2c21b56565, type: 2}
 --- !u!136 &136071978127953900
 CapsuleCollider:
   m_ObjectHideFlags: 1

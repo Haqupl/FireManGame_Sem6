@@ -114,6 +114,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: f50f6e70d39771644a83f5fe1fd29b0b, type: 2}
+--- !u!1001 &25614892
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 82dec3863e63ff4438f112d2d5f2da7e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.143451
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 82dec3863e63ff4438f112d2d5f2da7e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.17500018
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 82dec3863e63ff4438f112d2d5f2da7e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.1539088
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 82dec3863e63ff4438f112d2d5f2da7e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 82dec3863e63ff4438f112d2d5f2da7e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 82dec3863e63ff4438f112d2d5f2da7e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 82dec3863e63ff4438f112d2d5f2da7e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 82dec3863e63ff4438f112d2d5f2da7e, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 82dec3863e63ff4438f112d2d5f2da7e, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2944114deccc2fd4ab4141c0e9805ad1, type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 82dec3863e63ff4438f112d2d5f2da7e, type: 3}
+  m_IsPrefabParent: 0
 --- !u!1001 &33007338
 Prefab:
   m_ObjectHideFlags: 0
@@ -2624,7 +2670,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &208194631
 Prefab:
@@ -11102,7 +11148,7 @@ Transform:
   - {fileID: 1482270746}
   - {fileID: 1942333654}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &729726475
 Prefab:
@@ -13983,7 +14029,7 @@ Transform:
   - {fileID: 646952313}
   - {fileID: 2015164851}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &929262504
 Prefab:
@@ -14725,7 +14771,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4346951664738812, guid: 56b51939c2474ed42b105bfc7d07a2b4, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114368987885514060, guid: 56b51939c2474ed42b105bfc7d07a2b4,
         type: 2}
@@ -24848,7 +24894,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1633010213
 MonoBehaviour:
@@ -29266,6 +29312,7 @@ GameObject:
   - component: {fileID: 2015164850}
   - component: {fileID: 2015164849}
   - component: {fileID: 2015164848}
+  - component: {fileID: 2015164852}
   m_Layer: 5
   m_Name: Ui
   m_TagString: Untagged
@@ -29351,6 +29398,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!95 &2015164852
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2015164847}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2944114deccc2fd4ab4141c0e9805ad1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &2016561385
 Prefab:
   m_ObjectHideFlags: 0
