@@ -9,10 +9,12 @@ public class MovePlayer : MonoBehaviour
     public LayerMask mask;
 
     private Rigidbody rb;
+    private Animator anim;
     // Use this for initialization
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     public void FixedUpdate()
@@ -20,7 +22,7 @@ public class MovePlayer : MonoBehaviour
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputZ = Input.GetAxisRaw("Vertical");
 
-        Move(inputX, inputZ);
+        MoveAnim(inputX, inputZ);
 
         Ray rayMouse = Camera.main.ScreenPointToRay(Input.mousePosition);
         Rotation(rayMouse);
@@ -35,6 +37,12 @@ public class MovePlayer : MonoBehaviour
 
         rb.MovePosition(rb.position + movement);
 
+    }
+
+    private void MoveAnim(float inputX, float inputZ)
+    {
+        anim.SetFloat("SpeedX", inputX * 3.1f);
+        anim.SetFloat("SpeedZ", inputZ * 4.4f);
     }
 
     private void Rotation(Ray ray)

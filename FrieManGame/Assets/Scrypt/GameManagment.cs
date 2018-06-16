@@ -28,8 +28,8 @@ public class GameManagment : MonoBehaviour
             }
         }
 
-        StartCoroutine(SpawnEnemy());
-         }
+        // StartCoroutine(SpawnEnemy());
+    }
 
     IEnumerator SpawnEnemy()
     {
