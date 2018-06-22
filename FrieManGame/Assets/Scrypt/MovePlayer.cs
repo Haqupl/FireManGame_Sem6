@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovePlayer : MonoBehaviour
 {
 
-    public float speed;
+    private float speed;
     public LayerMask mask;
 
     private Rigidbody rb;
@@ -19,8 +19,8 @@ public class MovePlayer : MonoBehaviour
 
     public void FixedUpdate()
     {
-        float inputX = Input.GetAxisRaw("Horizontal");
-        float inputZ = Input.GetAxisRaw("Vertical");
+        float inputX = Input.GetAxis("Horizontal");
+        float inputZ = Input.GetAxis("Vertical");
 
         MoveAnim(inputX, inputZ);
 
@@ -41,25 +41,32 @@ public class MovePlayer : MonoBehaviour
 
     private void MoveAnim(float inputX, float inputZ)
     {
-        anim.SetFloat("SpeedX", inputX * 3.1f);
-        anim.SetFloat("SpeedZ", inputZ * 4.4f);
+        //if (inputX != 0)
+        anim.SetFloat("SpeedX", inputX * 4.4f, .13f, Time.deltaTime);
+        //else
+        //    anim.SetFloat("SpeedX", 0);
+
+        //if (inputZ != 0)
+        anim.SetFloat("SpeedZ", inputZ * 4.4f, .13f, Time.deltaTime);
+        //else
+        //    anim.SetFloat("SpeedZ", 0);
     }
 
     private void Rotation(Ray ray)
     {
         RaycastHit hit;
-        if (Physics.Raycast(ray,out hit ,100f,mask))
+        if (Physics.Raycast(ray, out hit, 100f, mask))
         {
             Vector3 distatnce = hit.point - rb.position;
             distatnce.y = 0;
 
             Quaternion rot = Quaternion.LookRotation(distatnce);
-          
+
             rb.MoveRotation(rot);
         }
     }
 
-   
+
 
 
 
