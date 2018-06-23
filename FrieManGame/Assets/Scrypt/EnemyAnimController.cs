@@ -15,7 +15,8 @@ public class EnemyAnimController : MonoBehaviour
     [SerializeField] float m_MoveSpeedMultiplier = 1f;
     [SerializeField] float m_AnimSpeedMultiplier = 1f;
     [SerializeField] float m_GroundCheckDistance = 0.2f;
-
+    
+    EnemyHealth m_EnemyHealth;
     Rigidbody m_Rigidbody;
     Animator m_Animator;
     bool m_IsGrounded;
@@ -35,8 +36,9 @@ public class EnemyAnimController : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
         m_Capsule = GetComponent<CapsuleCollider>();
+        m_EnemyHealth = GetComponent<EnemyHealth>();
         m_CapsuleHeight = m_Capsule.height;
-        m_CapsuleCenter = m_Capsule.center;
+        m_CapsuleCenter = m_Capsule.center;        
 
         m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
         m_OrigGroundCheckDistance = m_GroundCheckDistance;
@@ -118,14 +120,22 @@ public class EnemyAnimController : MonoBehaviour
     void UpdateAnimator(Vector3 move)
     {
         // update the animator parameters
-        m_Animator.SetFloat("Speed", m_ForwardAmount, 0.1f, Time.deltaTime);
-        m_Animator.SetFloat("Angle", m_TurnAmount, 0.1f, Time.deltaTime);
+        if (m_EnemyHealth.health >0)
+        {
+            m_Animator.SetFloat("Speed", m_ForwardAmount, 0.1f, Time.deltaTime);
+            m_Animator.SetFloat("Angle", m_TurnAmount, 0.1f, Time.deltaTime);
+        }
+        else
+        {
+            m_Animator.SetBool("IsDead1",true);
+        }
+       
         //m_Animator.SetBool("Crouch", m_Crouching);
         //m_Animator.SetBool("OnGround", m_IsGrounded);
-        if (!m_IsGrounded)
-        {
-            m_Animator.SetFloat("Jump", m_Rigidbody.velocity.y);
-        }
+        //if (!m_IsGrounded)
+        //{
+        //    m_Animator.SetFloat("Jump", m_Rigidbody.velocity.y);
+        //}
 
         // calculate which leg is behind, so as to leave that leg trailing in the jump animation
         // (This code is reliant on the specific run cycle offset in our animations,

@@ -9,10 +9,18 @@ public class EnemyMove : MonoBehaviour
 
     private Transform target;
     private NavMeshAgent nma;
+    private EnemyAnimController enamyController;
+    EnemyHealth enemyHealth;
+
+
     // Use this for initialization
     void Start()
     {
         nma = GetComponent<NavMeshAgent>();
+        nma.updateRotation = false;
+        enamyController = GetComponent<EnemyAnimController>();
+        enemyHealth = GetComponent<EnemyHealth>();
+
         GameObject[] objPlayers = GameObject.FindGameObjectsWithTag("Player");
         for (int i = 0; i < objPlayers.Length; i++)
         {
@@ -30,13 +38,25 @@ public class EnemyMove : MonoBehaviour
         if (!nma.isOnNavMesh)
             return;
 
+        if (target == null || enemyHealth.IsDead)
+        {
+            nma.isStopped = true;
+            enamyController.Move(Vector3.zero, false, false);
+            return;
+        }
+
         if (target != null)
         {
             nma.SetDestination(target.position);
         }
-        if (target == null)
+
+        if (nma.remainingDistance > nma.stoppingDistance)
         {
-            nma.isStopped = true;
+            enamyController.Move(nma.desiredVelocity, false, false);
+        }
+        else
+        {
+            enamyController.Move(Vector3.zero, false, false);
         }
     }
 }

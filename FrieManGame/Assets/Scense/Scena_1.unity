@@ -2587,7 +2587,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 206520209}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -14014,7 +14014,7 @@ MonoBehaviour:
   spawnPoint:
   - {fileID: 1892278828}
   - {fileID: 630831291}
-  enemy: {fileID: 1183575215390526, guid: f952ee2b0d5190e43bbbd92f42fe0f8b, type: 2}
+  enemy: {fileID: 1585547621365172, guid: 105b5b951354f8548b67f14fdee6fb43, type: 2}
   timeNextSpawn: 15
   enemyPerSpown: 3
   txtScore: {fileID: 993082884}

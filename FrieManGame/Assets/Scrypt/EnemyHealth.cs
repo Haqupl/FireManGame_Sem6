@@ -11,7 +11,7 @@ public class EnemyHealth : MonoBehaviour
     public byte score = 5;
     public Slider sliderHealth;
     public GameObject healtBonus;
-
+    public bool IsDead;
     private float lastAttack = 0;
 
     // Use this for initialization
@@ -30,8 +30,9 @@ public class EnemyHealth : MonoBehaviour
         if (sliderHealth != null)
             sliderHealth.value = Mathf.Lerp(sliderHealth.value, health, Time.deltaTime * 3f);
 
-        if (health <= 0)
+        if (health <= 0 && !IsDead)
         {
+            IsDead = true;
             if (sliderHealth != null)
                 sliderHealth.value = 0;
             FindObjectOfType<GameManagment>().AddScore(score);
@@ -40,7 +41,7 @@ public class EnemyHealth : MonoBehaviour
             {
                 Instantiate(healtBonus, transform.position, Quaternion.identity);
             }
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 

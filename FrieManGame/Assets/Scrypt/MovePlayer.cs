@@ -42,7 +42,7 @@ public class MovePlayer : MonoBehaviour
     private void MoveAnim(float inputX, float inputZ)
     {
         //if (inputX != 0)
-        anim.SetFloat("SpeedX", inputX * 4.4f, .13f, Time.deltaTime);
+        anim.SetFloat("SpeedX", inputX * 4.4f, 0.13f, Time.deltaTime);
         //else
         //    anim.SetFloat("SpeedX", 0);
 
