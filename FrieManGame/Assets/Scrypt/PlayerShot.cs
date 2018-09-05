@@ -22,7 +22,7 @@ public class PlayerShot : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        anim.SetLayerWeight(1, 1f);
+        //anim.SetLayerWeight(1, 1f);
         gun = spawnPoint.parent.gameObject;
         defaultPosition = gun.transform.localRotation;
     }
@@ -34,17 +34,10 @@ public class PlayerShot : MonoBehaviour
             return;
 
         bool inputShoot = Input.GetButton("Fire1");
-        if (inputShoot && AmmoInMagazine > 0)
+        if (inputShoot && AmmoInMagazine > 0 && lastShoot < Time.time)
         {
-            anim.SetBool("Shoot", true);
-            gun.transform.localRotation = shootPosition;
+            EventShootAnim();
         }
-        else
-        {
-            gun.transform.localRotation = defaultPosition;
-            anim.SetBool("Shoot", false);
-        }
-        //anim.SetBool("Shoot", true);
 
         bool reload = Input.GetButtonDown("ReloadWeapon");
         if ((reload && AmmoInMagazine < 7) || AmmoInMagazine == 0)
